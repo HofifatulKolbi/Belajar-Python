@@ -1,2 +1,3 @@
-## ANALSIIS KODE PROGRAM
-
+# ANALISIS KODE PROGRAM
+## build_embeddings.py
+Kode tersebut berfungsi untuk membangun dataset embedding FaceNet dari folder data/train, kemudian menyimpannya menjadi dua file: X_train.npy untuk embedding dan y_train.npy untuk label kelas. Prosesnya dimulai dengan fungsi iter_images() yang membaca seluruh folder dalam data/train sebagai kelas, lalu menghasilkan path gambar beserta nama kelasnya. Selanjutnya, fungsi build_matrix() melakukan iterasi pada setiap gambar, memanggil embed_from_path() untuk mengekstrak embedding wajah menggunakan FaceNet. Jika wajah tidak terdeteksi, file gambar dimasukkan ke list bad; sebaliknya, embedding disimpan ke list X dan label kelasnya ke list y. Setelah semua gambar selesai diproses, embedding dan label diubah menjadi array NumPy dan disimpan ke disk. Secara keseluruhan, script ini berguna untuk menyiapkan dataset numerik yang akan digunakan untuk melatih model klasifikasi wajah, sekaligus memberikan laporan berapa banyak gambar yang gagal terdeteksi wajahnya.
